@@ -17,3 +17,26 @@ def guardar_dado(dados_rolados, dados_no_estoque, dado_para_guardar):
             novos_rolados.append(dados_rolados[i])
     
     return [novos_rolados, novo_estoque]
+
+def remover_dado(dados_rolados, dados_no_estoque, dado_para_remover):
+    novos_rolados = []
+    for x in dados_rolados:
+        novos_rolados.append(x)
+    novos_rolados.append(dados_no_estoque[dado_para_remover])
+    
+    novo_estoque = []
+    for i in range(len(dados_no_estoque)):
+        if i != dado_para_remover:
+            novo_estoque.append(dados_no_estoque[i])
+    
+    return [novos_rolados, novo_estoque]
+
+def calcula_pontos_regra_simples(dados):
+    resultado = {}
+    for face in range(1, 7):
+        pontos = 0
+        for dado in dados:
+            if dado == face:
+                pontos += face
+        resultado[face] = pontos
+    return resultado
