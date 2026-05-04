@@ -11,3 +11,10 @@ def guardar_dado(d, dg, p):
         novo.append(x)    
     novo.append(d[p])    
     return [dg, novo]
+
+def remover_dado(dg, p):
+    x = {}
+    for c in dg:
+        if c != p:
+            x[c] = dg[c]
+    return x
