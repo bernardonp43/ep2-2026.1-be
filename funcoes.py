@@ -4,3 +4,10 @@ def rolar_dados (n):
     for i in range(n):
         dados.append(random.randint(1, 6))
     return dados
+
+def guardar_dado(d, dg, p):
+    novo = [] 
+    for x in dg:
+        novo.append(x)    
+    novo.append(d[p])    
+    return [dg, novo]
