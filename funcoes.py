@@ -40,3 +40,9 @@ def calcula_pontos_regra_simples(dados):
                 pontos += face
         resultado[face] = pontos
     return resultado
+
+def calcula_pontos_soma(dados):
+    total = 0
+    for dado in dados:
+        total += dado
+    return total
