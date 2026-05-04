@@ -80,3 +80,26 @@ def calcula_pontos_sequencia_alta(dados):
             return 30
     
     return 0
+
+def calcula_pontos_full_house(dados):
+    for valor_tres in range(1, 7):
+        contagem_tres = 0
+        for dado in dados:
+            if dado == valor_tres:
+                contagem_tres += 1
+        
+        if contagem_tres == 3:
+            for valor_dois in range(1, 7):
+                if valor_dois != valor_tres:
+                    contagem_dois = 0
+                    for dado in dados:
+                        if dado == valor_dois:
+                            contagem_dois += 1
+                    
+                    if contagem_dois == 2:
+                        total = 0
+                        for dado in dados:
+                            total += dado
+                        return total
+    
+    return 0
